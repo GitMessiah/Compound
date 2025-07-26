@@ -108,7 +108,7 @@ MonoBehaviour:
   rb: {fileID: 4782940700169254060}
   firepoint: {fileID: 4925686918947323860}
   gunSprite: {fileID: 0}
-  speed: 1
+  speed: 2
   attackDistanceFromEcooli: 1
   runX: 5
   runY: 3
@@ -226,6 +226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   dead: 0
+  invincible: 0
+  invincibleTime: 0.3
 --- !u!1 &4925686918947323860
 GameObject:
   m_ObjectHideFlags: 0

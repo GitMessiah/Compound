@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotForce: 3000
   speed: 5
-  jumpForce: 10
+  jumpForce: 11.5
   acceleration: 0.5
   attackDistanceFromPlayer: 0.5
   damage: 10
