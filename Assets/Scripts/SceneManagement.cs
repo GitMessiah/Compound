@@ -8,10 +8,14 @@ public class SceneManagement : MonoBehaviour
 
     public bool loadSceneOnEscape = false;
 
+    public static int level;
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        level = 1;
     }
 
     // Update is called once per frame
@@ -21,12 +25,22 @@ public class SceneManagement : MonoBehaviour
         {
             SceneManager.LoadSceneAsync(scene); 
         }
+
+     
     }
 
     public void OnPlay()
     {
         SceneManager.LoadSceneAsync(scene);
         Debug.Log(scene);
+    }
+
+    
+ 
+    public static void LoadLevel(int levelSelected)
+    {
+        level = levelSelected;
+        SceneManager.LoadSceneAsync("Level " + levelSelected);
     }
 
 }
