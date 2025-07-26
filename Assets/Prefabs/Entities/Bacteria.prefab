@@ -191,6 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   dead: 0
+  invincible: 0
+  invincibleTime: 0.3
 --- !u!114 &1715097332050689759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,4 +207,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 6303545584729163785}
   speed: 1
+  distanceToActivate: 25
   animator: {fileID: 0}

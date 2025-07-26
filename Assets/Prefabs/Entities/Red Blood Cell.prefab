@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8152590020523680172}
   - component: {fileID: 6147418689915616643}
   - component: {fileID: 991741996097656834}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Red Blood Cell
   m_TagString: Friendly
   m_Icon: {fileID: 0}
