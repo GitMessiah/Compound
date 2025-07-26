@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8278725456825804241}
   - component: {fileID: 1662781792662185773}
   - component: {fileID: 4023884734204453823}
+  - component: {fileID: 7425884232103259266}
+  - component: {fileID: -687814750428132775}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -173,5 +175,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f29cb99eb84a1049afcc86facc482a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &7425884232103259266
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542253940796058334}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc2815e28bd7e6f41a15c0bfee21cd91, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-687814750428132775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542253940796058334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 816dbf76aadff83429a13c0e9cc3fae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
