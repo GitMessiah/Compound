@@ -52,12 +52,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rb.linearVelocityY == 0) grounded = true; else grounded = false;
         reloadSpeedTimer -= Time.deltaTime;
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
         movementX = Input.GetAxisRaw("Horizontal");
-
+        // “Kick” out of the floor-stuck state
+        if (grounded && Mathf.Abs(rb.linearVelocityX) < 0.02f && Mathf.Abs(movementX) > 0f)
+        {
+            rb.linearVelocityX = movementX * 2f;
+            rb.WakeUp();
+        }
         if (!dipHealth.dead)
         {
 
@@ -191,26 +196,24 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (rb.linearVelocityY == 0) grounded = true; else grounded = false;
-
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") && !dipHealth.dead)
-        {
-            grounded = true;
-            if (rb.linearVelocityX > 0)
-            {
-                rb.linearVelocityX = speed;
-            }
-            if (rb.linearVelocityX < 0)
-            {
-                rb.linearVelocityX = -speed;
-            }
+        // if (collision.gameObject.CompareTag("Ground") && !dipHealth.dead)
+        // {
+        //     grounded = true;
+        //     if (rb.linearVelocityX > 0)
+        //     {
+        //         rb.linearVelocityX = speed;
+        //     }
+        //     if (rb.linearVelocityX < 0)
+        //     {
+        //         rb.linearVelocityX = -speed;
+        //     }
 
-        }
+        // }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -223,10 +226,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") && !dipHealth.dead)
-        {
-            grounded = false;
-        }
+        // if (collision.gameObject.CompareTag("Ground") && !dipHealth.dead)
+        // {
+        //     grounded = false;
+        // }
     }
 
     public void AfterDeath()
