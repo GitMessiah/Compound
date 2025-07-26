@@ -52,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rb.linearVelocityY == 0) grounded = true; else grounded = false;
         reloadSpeedTimer -= Time.deltaTime;
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -192,7 +191,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+        if (rb.linearVelocityY == 0) grounded = true; else grounded = false;
+
 
     }
 
