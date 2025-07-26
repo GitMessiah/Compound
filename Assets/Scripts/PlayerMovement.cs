@@ -46,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-
         reloadSpeedTimer = reloadSpeed;
     }
 
@@ -184,9 +183,9 @@ public class PlayerMovement : MonoBehaviour
     void Shoot()
     {
         GameObject g = Instantiate(bullet, firepoint.position, firepoint.rotation);
-
         g.GetComponent<Rigidbody2D>().AddForce(firepoint.right * shotForce * charge);
         g.GetComponent<Arrow>().damage = charge * damage;
+        g.GetComponent<Arrow>().knockback *= charge * 0.66f;
         Debug.Log("Damage: " + (charge * damage));
 
     }
