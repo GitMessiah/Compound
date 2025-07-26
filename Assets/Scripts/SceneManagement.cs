@@ -5,6 +5,7 @@ public class SceneManagement : MonoBehaviour
 {
 
     public static int level;
+    public string scene;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,8 +21,8 @@ public class SceneManagement : MonoBehaviour
 
     public void OnPlay()
     {
-        SceneManager.LoadSceneAsync("Level 1");
-        Debug.Log("switch scene");
+        SceneManager.LoadSceneAsync(scene);
+        Debug.Log(scene);
     }
 
 }
