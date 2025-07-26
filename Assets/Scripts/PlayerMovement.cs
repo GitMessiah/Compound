@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float charge = 0;
     public float maxCharge = 3;
 
-    public Transform chargeBar;
+    public Slider chargeBar;
     public float barX;
 
     public Rigidbody2D rb;
@@ -46,16 +47,13 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
 
-        barX = chargeBar.localScale.x;
-        chargeBar.localScale = new Vector3(0, chargeBar.localScale.y);
-
         reloadSpeedTimer = reloadSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (rb.linearVelocityY == 0) grounded = true; else grounded = false;
         reloadSpeedTimer -= Time.deltaTime;
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -72,18 +70,22 @@ public class PlayerMovement : MonoBehaviour
                 {
                     charge += Time.deltaTime;
 
-                } else
+                }
+                else
                 {
                     charge = maxCharge;
                 }
 
-                chargeBar.localScale = new Vector3((charge / maxCharge) * barX, chargeBar.localScale.y);
+                chargeBar.value = charge;
+                chargeBar.maxValue = maxCharge;
                 
-            } else if (!Input.GetMouseButton(0) && charge > 0) {
+            }
+            else if (!Input.GetMouseButton(0) && charge > 0)
+            {
 
                 Shoot();
                 charge = 0;
-                chargeBar.localScale = new Vector3(0, chargeBar.localScale.y);
+                chargeBar.value = 0;
                 reloadSpeedTimer = reloadSpeed;
 
             }
