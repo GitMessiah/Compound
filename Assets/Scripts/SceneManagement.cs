@@ -20,7 +20,8 @@ public class SceneManagement : MonoBehaviour
 
     public void OnPlay()
     {
-        SceneManager.LoadSceneAsync("Level" + level);
+        SceneManager.LoadSceneAsync("Level 1");
+        Debug.Log("switch scene");
     }
 
 }
