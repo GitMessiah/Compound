@@ -168,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 sprite.flipX = true;
             }
-            
+
             if (movementX != 0)
             {
                 animator.Play("Dip_Run");

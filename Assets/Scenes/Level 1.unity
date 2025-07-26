@@ -3520,10 +3520,6 @@ PrefabInstance:
       propertyPath: chargeBar
       value: 
       objectReference: {fileID: 1737433678}
-    - target: {fileID: 999843308296079244, guid: 8d6c6ab770cea8c4aa5c3c80d7a866aa, type: 3}
-      propertyPath: maxCharge
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3537299416591351758, guid: 8d6c6ab770cea8c4aa5c3c80d7a866aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
