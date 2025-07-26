@@ -110,7 +110,7 @@ MonoBehaviour:
   distanceToActivate: 25
   distanceRun: 5
   speed: 1
-  bulletSpeed: 50
+  bulletSpeed: 75
   distanceFromTank: 1
   distanceFromTankY: 0.2
   reloadTime: 3
