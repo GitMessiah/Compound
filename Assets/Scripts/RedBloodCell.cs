@@ -7,7 +7,7 @@ public class RedBloodCell : MonoBehaviour
     public float movementTime = 3f;
     public float movementTimer = 3f;
 
-    public float force = 100f;
+    public float force = 5f;
 
     public Rigidbody2D rb;
 
@@ -60,7 +60,7 @@ public class RedBloodCell : MonoBehaviour
         if (!health.dead && movementTimer <= 0)
         {
             float randomValue = Random.Range(-1f, 1f);
-            rb.AddForce(new Vector2(randomValue * force, 0), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(randomValue * force * 0.33f, force * 0.5f), ForceMode2D.Impulse);
             movementTimer = movementTime; 
         } else if (health.dead)
         {
