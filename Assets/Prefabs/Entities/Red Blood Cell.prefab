@@ -183,7 +183,9 @@ MonoBehaviour:
   rb: {fileID: 103550530128786768}
   health: {fileID: 0}
   animator: {fileID: 0}
+  player: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  distanceToActivate: 15
 --- !u!95 &6147418689915616643
 Animator:
   serializedVersion: 7
