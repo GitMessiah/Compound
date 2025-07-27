@@ -18,7 +18,7 @@ public class Chromosome : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-            SceneManager.LoadSceneAsync("Level 2");
+            SceneManager.LoadSceneAsync("Level Complete");
     }
 
 }
