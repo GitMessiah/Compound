@@ -10,7 +10,7 @@ public class Parasite : MonoBehaviour
     public float distanceToActivate;
     public float speed;
 
-
+    float timer = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,13 +24,18 @@ public class Parasite : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (!health.dead)
         {
 
             Vector2 path = player.position - transform.position;
             if (path.magnitude < distanceToActivate)
             {
+                timer += Time.deltaTime;
+                if (timer > 5f && Random.Range(0, 100) > 80)
+                {
+                    SoundManager.PlaySound(SoundType.PARASITEPASSIVE);
+                    timer = 0f;
+                }
                 if (player.position.x - transform.position.x > 0)
                 {
 
@@ -43,11 +48,12 @@ public class Parasite : MonoBehaviour
                     //rb.linearVelocityX = -speed;
                 }
 
-            } 
-            
+            }
+
         }
         else
         {
+            SoundManager.PlaySound(SoundType.PARASITEDEATH);
             animator.Play("Parasite_Death");
         }
     }

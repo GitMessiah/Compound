@@ -17,6 +17,7 @@ public class Health : MonoBehaviour
         if (!invincible)
         {
             health -= damage;
+            SoundManager.PlaySound(SoundType.HURT);
             invincible = true;
         }
             
