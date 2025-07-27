@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36aa7762dffa7f547963ccfec0b1cabf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0.3
   shotForce: 3000
   speed: 5
   jumpForce: 11.5
@@ -250,14 +251,10 @@ MonoBehaviour:
   die: 0
   grounded: 0
   bowCharged: 0
+  bowCharging: 0
   firepoint: {fileID: 2413678376326520685}
   bullet: {fileID: 4902051237376009549, guid: cb54c78164ca06344ba73dcf030521f0, type: 3}
   animator: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  groundCheckRadius: 0.1
-  groundCheckPoint: {fileID: 0}
 --- !u!50 &8341646798635755224
 Rigidbody2D:
   serializedVersion: 5
