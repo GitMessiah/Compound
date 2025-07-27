@@ -200,4 +200,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   timer: 0
-  despawnTime: 5
+  despawnTime: 10

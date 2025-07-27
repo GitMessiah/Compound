@@ -21,14 +21,20 @@ public class Arrow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Friendly"))
+        
+        if (collision.CompareTag("Wall"))
         {
-            Health playerHealth = FindFirstObjectByType<PlayerMovement>().GetComponent<Health>();
-            playerHealth.doDamage(1);
-        }
+            Destroy(gameObject);
 
-        if (collision.CompareTag("Friendly") || collision.CompareTag("Enemy"))
+        } else if (collision.CompareTag("Friendly") || collision.CompareTag("Enemy"))
         {
+
+            if (collision.CompareTag("Friendly"))
+            {
+                Health playerHealth = FindFirstObjectByType<PlayerMovement>().GetComponent<Health>();
+                playerHealth.doDamage(1);
+            }
+
             collision.GetComponent<Health>().doDamage(damage);
             Vector2 angle = collision.transform.position - transform.position;
             angle.Normalize();
