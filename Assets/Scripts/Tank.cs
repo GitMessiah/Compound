@@ -24,6 +24,7 @@ public class Tank : MonoBehaviour
     public float reloadTime = 1;
     float reloadTimer;
     float timer;
+    bool played = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -127,7 +128,7 @@ public class Tank : MonoBehaviour
         }
         else
         {
-            SoundManager.PlaySound(SoundType.TANKDEATH);
+            if(!played) SoundManager.PlaySound(SoundType.TANKDEATH, 0.2f); played = true;
             animator.Play("Tank_Death");
         }
     }

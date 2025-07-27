@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
     public void Shoot()
     {
         GameObject g = Instantiate(bullet, transform.position, transform.rotation);
-        SoundManager.PlaySound(SoundType.ECOOLISHOOT);
+        SoundManager.PlaySound(SoundType.ECOOLISHOOT, 0.5f);
         g.GetComponent<Rigidbody2D>().AddForce(transform.right * bulletSpeed, ForceMode2D.Impulse);
     }
 }

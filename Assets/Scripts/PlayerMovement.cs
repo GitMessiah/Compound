@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if (!bowCharged)
                     {
-                        SoundManager.PlaySound(SoundType.BOWCHARGE);
+                        SoundManager.PlaySound(SoundType.BOWCHARGE, 0.7f);
                         bowCharged = true;
                     }
                     charge = maxCharge;

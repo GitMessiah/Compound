@@ -65,6 +65,7 @@ public class RedBloodCell : MonoBehaviour
         } else if (health.dead)
         {
             animator.Play("Red_Blood_Cell_Die");
+            SoundManager.PlaySound(SoundType.REDBLOODDEATH, 0.5f);
             Destroy(this.gameObject.GetComponent<BoxCollider2D>());
             Destroy(this.gameObject.GetComponent<Rigidbody2D>());
 

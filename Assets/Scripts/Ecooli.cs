@@ -29,6 +29,7 @@ public class Ecooli : MonoBehaviour
 
     public float distanceToActivate = 25;
     float timer;
+    bool played = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -171,7 +172,7 @@ public class Ecooli : MonoBehaviour
             }
         } else
         {
-            SoundManager.PlaySound(SoundType.ECOOLIDEATH);
+            if(!played) SoundManager.PlaySound(SoundType.ECOOLIDEATH, 0.2f); played = true;
             animator.Play("Ecooli_Death");
         }
         

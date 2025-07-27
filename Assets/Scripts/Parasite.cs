@@ -9,7 +9,7 @@ public class Parasite : MonoBehaviour
 
     public float distanceToActivate;
     public float speed;
-
+    bool played = false;
     float timer = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,7 +33,7 @@ public class Parasite : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer > 5f && Random.Range(0, 100) > 80)
                 {
-                    SoundManager.PlaySound(SoundType.PARASITEPASSIVE);
+                    SoundManager.PlaySound(SoundType.PARASITEPASSIVE, 0.5f);
                     timer = 0f;
                 }
                 if (player.position.x - transform.position.x > 0)
@@ -53,7 +53,7 @@ public class Parasite : MonoBehaviour
         }
         else
         {
-            SoundManager.PlaySound(SoundType.PARASITEDEATH);
+            if(!played) SoundManager.PlaySound(SoundType.PARASITEDEATH, 0.2f); played = true;
             animator.Play("Parasite_Death");
         }
     }

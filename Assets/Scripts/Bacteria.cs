@@ -11,7 +11,7 @@ public class Bacteria : MonoBehaviour
     public float distanceToActivate = 25;
 
     float timer = 0f;
-
+    bool played = false;
     public Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,7 +37,7 @@ public class Bacteria : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer > 5f && Random.Range(0, 100) > 80)
                 {
-                    SoundManager.PlaySound(SoundType.BACTERIAPASSIVE);
+                    SoundManager.PlaySound(SoundType.BACTERIAPASSIVE, 0.5f);
                     timer = 0f;
                 }
             }
@@ -45,7 +45,7 @@ public class Bacteria : MonoBehaviour
         }
         else
         {
-            SoundManager.PlaySound(SoundType.BACTERIADEATH);
+            if(!played) SoundManager.PlaySound(SoundType.BACTERIADEATH, 0.2f); played = true;
             animator.Play("Bacteria_Death");
         }
     }
