@@ -118,6 +118,7 @@ MonoBehaviour:
   sunglassesFallingOff: 0
   onlyFallOnce: 0
   distanceToActivate: 15
+  fadeSpeed: 0.002
 --- !u!95 &5739936416489333283
 Animator:
   serializedVersion: 7

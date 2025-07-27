@@ -28,8 +28,12 @@ public class Ecooli : MonoBehaviour
     public bool onlyFallOnce = false;
 
     public float distanceToActivate = 25;
+    public float fadeSpeed = 3;
+
     float timer;
     bool played = false;
+
+    private Material mat;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -43,12 +47,23 @@ public class Ecooli : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         firepointAnimator = firepoint.GetComponent<Animator>();
         gunSprite = firepoint.GetComponent<SpriteRenderer>();
+        mat = GetComponent<Renderer>().material;
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (health.dead)
+        {
+            Color color = mat.color;
+            color.a = Mathf.Max(0, color.a - fadeSpeed); // Clamp to 0
+            mat.color = color;
+
+        }
+
         if (!health.dead && !sunglassesFallingOff)
         {
             
@@ -206,6 +221,8 @@ public class Ecooli : MonoBehaviour
 
         }
     }
+
+    
 
     
 
