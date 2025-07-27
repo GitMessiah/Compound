@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: f104baf0d83d0604caeebfa5ca9bce8f
+guid: fadf2af360f3cf547835080dd61338ef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1434164619581700451
-    second: dip_idle_new_0
+      213: 1028082612052342519
+    second: dip_run_new_0
   - first:
-      213: -7014942877777874272
-    second: dip_idle_new_1
+      213: 7737502167849546008
+    second: dip_run_new_1
   - first:
-      213: 160312073503665258
-    second: dip_idle_new_2
+      213: 5886442107497935159
+    second: dip_run_new_2
   - first:
-      213: -4287164369105247485
-    second: dip_idle_new_3
+      213: 1100602822714819930
+    second: dip_run_new_3
   - first:
-      213: 1037888562049465645
-    second: dip_idle_new_4
+      213: -7299142016303701185
+    second: dip_run_new_4
+  - first:
+      213: -5869918164760918657
+    second: dip_run_new_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dip_idle_new_0
+      name: dip_run_new_0
       rect:
         serializedVersion: 2
         x: 8
@@ -127,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d96466480e2d81ce0800000000000000
-      internalID: -1434164619581700451
+      spriteID: 7f6b22b40bb744e00800000000000000
+      internalID: 1028082612052342519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dip_idle_new_1
+      name: dip_run_new_1
       rect:
         serializedVersion: 2
         x: 40
@@ -149,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a2b4629e9ae5ae90800000000000000
-      internalID: -7014942877777874272
+      spriteID: 811bc730a31216b60800000000000000
+      internalID: 7737502167849546008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dip_idle_new_2
+      name: dip_run_new_2
       rect:
         serializedVersion: 2
         x: 8
@@ -171,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a6c64624bfa893200800000000000000
-      internalID: 160312073503665258
+      spriteID: 731f058b8e7d0b150800000000000000
+      internalID: 5886442107497935159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dip_idle_new_3
+      name: dip_run_new_3
       rect:
         serializedVersion: 2
         x: 40
         y: 36
         width: 18
-        height: 18
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30325cd78bee084c0800000000000000
-      internalID: -4287164369105247485
+      spriteID: a5585be9f60264f00800000000000000
+      internalID: 1100602822714819930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dip_idle_new_4
+      name: dip_run_new_4
       rect:
         serializedVersion: 2
         x: 8
         y: 4
         width: 18
-        height: 18
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +218,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2d3661f522576e00800000000000000
-      internalID: 1037888562049465645
+      spriteID: f33e619320d34ba90800000000000000
+      internalID: -7299142016303701185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dip_run_new_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 4
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7500d0878cd98ea0800000000000000
+      internalID: -5869918164760918657
       vertices: []
       indices: 
       edges: []
@@ -235,11 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dip_idle_new_0: -1434164619581700451
-      dip_idle_new_1: -7014942877777874272
-      dip_idle_new_2: 160312073503665258
-      dip_idle_new_3: -4287164369105247485
-      dip_idle_new_4: 1037888562049465645
+      dip_run_new_0: 1028082612052342519
+      dip_run_new_1: 7737502167849546008
+      dip_run_new_2: 5886442107497935159
+      dip_run_new_3: 1100602822714819930
+      dip_run_new_4: -7299142016303701185
+      dip_run_new_5: -5869918164760918657
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
