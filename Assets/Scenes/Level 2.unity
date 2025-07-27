@@ -157,7 +157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You are a white blood cell. Hunt bacteria.
+  m_text: You are a white blood cell. Hunt bacteria and protect the body.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -631,6 +631,10 @@ PrefabInstance:
     - target: {fileID: 4770160495564408584, guid: 64470178d197e60459219c7b8f03d8d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954786601703558655, guid: 64470178d197e60459219c7b8f03d8d2, type: 3}
+      propertyPath: reloadTime
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19770,6 +19774,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d6c6ab770cea8c4aa5c3c80d7a866aa, type: 3}
+--- !u!1001 &1221400148
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1788485904942539598, guid: bd53387d58d04d34a90da9a6adfce28d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 95.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788485904942539598, guid: bd53387d58d04d34a90da9a6adfce28d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788485904942539598, guid: bd53387d58d04d34a90da9a6adfce28d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788485904942539598, guid: bd53387d58d04d34a90da9a6adfce28d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788485904942539598, guid: bd53387d58d04d34a90da9a6adfce28d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788485904942539598, guid: bd53387d58d04d34a90da9a6adfce28d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788485904942539598, guid: bd53387d58d04d34a90da9a6adfce28d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788485904942539598, guid: bd53387d58d04d34a90da9a6adfce28d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788485904942539598, guid: bd53387d58d04d34a90da9a6adfce28d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788485904942539598, guid: bd53387d58d04d34a90da9a6adfce28d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251459087193916385, guid: bd53387d58d04d34a90da9a6adfce28d, type: 3}
+      propertyPath: m_Name
+      value: Bacteria (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bd53387d58d04d34a90da9a6adfce28d, type: 3}
 --- !u!1001 &1274579695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19780,11 +19841,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 364268822359262297, guid: e9da6fd4ed1b9ba45af24196bb08bdac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.23
+      value: 10.23
       objectReference: {fileID: 0}
     - target: {fileID: 364268822359262297, guid: e9da6fd4ed1b9ba45af24196bb08bdac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.88
+      value: 1.85
       objectReference: {fileID: 0}
     - target: {fileID: 364268822359262297, guid: e9da6fd4ed1b9ba45af24196bb08bdac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -53194,63 +53255,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9da6fd4ed1b9ba45af24196bb08bdac, type: 3}
---- !u!1001 &2069882750
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 167053322583816211, guid: 28adbd8a33046c64c97fc63ea90c7035, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 115.57356
-      objectReference: {fileID: 0}
-    - target: {fileID: 167053322583816211, guid: 28adbd8a33046c64c97fc63ea90c7035, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.494503
-      objectReference: {fileID: 0}
-    - target: {fileID: 167053322583816211, guid: 28adbd8a33046c64c97fc63ea90c7035, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 167053322583816211, guid: 28adbd8a33046c64c97fc63ea90c7035, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 167053322583816211, guid: 28adbd8a33046c64c97fc63ea90c7035, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 167053322583816211, guid: 28adbd8a33046c64c97fc63ea90c7035, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 167053322583816211, guid: 28adbd8a33046c64c97fc63ea90c7035, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 167053322583816211, guid: 28adbd8a33046c64c97fc63ea90c7035, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 167053322583816211, guid: 28adbd8a33046c64c97fc63ea90c7035, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 167053322583816211, guid: 28adbd8a33046c64c97fc63ea90c7035, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 612813576526498815, guid: 28adbd8a33046c64c97fc63ea90c7035, type: 3}
-      propertyPath: m_Name
-      value: Chromosome
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 28adbd8a33046c64c97fc63ea90c7035, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -53276,4 +53280,4 @@ SceneRoots:
   - {fileID: 1677910883}
   - {fileID: 21111549}
   - {fileID: 1110343419}
-  - {fileID: 2069882750}
+  - {fileID: 1221400148}
