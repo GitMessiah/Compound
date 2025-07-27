@@ -58,16 +58,10 @@ public class PlayerMovement : MonoBehaviour
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         movementX = Input.GetAxisRaw("Horizontal");
-        // “Kick” out of the floor-stuck state
         
         if (!dipHealth.dead)
         {
-            if (grounded && Mathf.Abs(rb.linearVelocityX) < 0.02f && Mathf.Abs(movementX) > 0f)
-            {
-                rb.linearVelocityX = movementX * 2f;
-                rb.WakeUp();
-            }
-
+            
 
             if (Input.GetMouseButton(0) && reloadSpeedTimer <= 0)
             {
@@ -118,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
             float velX = rb.linearVelocityX;
 
-            if (velX < speed && velX > -speed)
+            if (velX <= speed && velX > -speed)
             {
                 rb.linearVelocityX += movementX * acceleration;
             }

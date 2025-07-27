@@ -14,8 +14,11 @@ public class RedBloodCell : MonoBehaviour
     public Health health;
 
     public Animator animator;
+    public GameObject player;
 
     public SpriteRenderer spriteRenderer;
+
+    public float distanceToActivate = 15f;
 
     bool played = false;
 
@@ -23,6 +26,7 @@ public class RedBloodCell : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        player = GameObject.Find("Dip");
         movementTimer = Random.Range(1f, 3f);
         health = GetComponent<Health>();
         animator = GetComponent<Animator>();
@@ -57,7 +61,7 @@ public class RedBloodCell : MonoBehaviour
         }
            
 
-        if (!health.dead && movementTimer <= 0)
+        if (!health.dead && movementTimer <= 0 && (player.transform.position - transform.position).magnitude < distanceToActivate)
         {
             float randomValue = Random.Range(-1f, 1f);
             rb.AddForce(new Vector2(randomValue * force * 0.33f, force * 0.5f), ForceMode2D.Impulse);
