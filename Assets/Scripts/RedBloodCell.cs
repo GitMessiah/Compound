@@ -17,7 +17,7 @@ public class RedBloodCell : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
 
-
+    bool played = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -65,7 +65,7 @@ public class RedBloodCell : MonoBehaviour
         } else if (health.dead)
         {
             animator.Play("Red_Blood_Cell_Die");
-            SoundManager.PlaySound(SoundType.REDBLOODDEATH, 0.5f);
+            if (!played) SoundManager.PlaySound(SoundType.REDBLOODDEATH, 0.5f); played = true;
             Destroy(this.gameObject.GetComponent<BoxCollider2D>());
             Destroy(this.gameObject.GetComponent<Rigidbody2D>());
 
