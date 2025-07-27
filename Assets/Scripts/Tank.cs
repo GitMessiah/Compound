@@ -128,7 +128,11 @@ public class Tank : MonoBehaviour
         else
         {
             SoundManager.PlaySound(SoundType.TANKDEATH);
+<<<<<<< Updated upstream
             animator.Play("Tank_Death");
+=======
+            Destroy(this.gameObject);
+>>>>>>> Stashed changes
         }
 
 

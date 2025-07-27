@@ -54,7 +54,11 @@ public class Parasite : MonoBehaviour
         else
         {
             SoundManager.PlaySound(SoundType.PARASITEDEATH);
+<<<<<<< Updated upstream
             animator.Play("Parasite_Death");
+=======
+            Destroy(this.gameObject);
+>>>>>>> Stashed changes
         }
     }
 
