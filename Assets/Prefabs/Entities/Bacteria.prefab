@@ -207,5 +207,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 6303545584729163785}
   speed: 1
-  distanceToActivate: 15
+  distanceToActivate: 10
   animator: {fileID: 0}

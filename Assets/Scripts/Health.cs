@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
         if (!invincible)
         {
             health -= damage;
-            SoundManager.PlaySound(SoundType.HURT);
+            SoundManager.PlaySound(SoundType.HURT, 0.1f);
             invincible = true;
         }
             
@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (transform.position.y < -20) health -= 9999;
         if (invincible)
         {
             invincibleTimer -= Time.deltaTime;

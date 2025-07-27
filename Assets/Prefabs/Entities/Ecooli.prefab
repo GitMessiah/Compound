@@ -117,7 +117,7 @@ MonoBehaviour:
   sunglassesOn: 1
   sunglassesFallingOff: 0
   onlyFallOnce: 0
-  distanceToActivate: 15
+  distanceToActivate: 10
 --- !u!95 &5739936416489333283
 Animator:
   serializedVersion: 7
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0240d480489c84d4ea9aeac6131a4892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 30
   dead: 0
   invincible: 0
   invincibleTime: 0.3
