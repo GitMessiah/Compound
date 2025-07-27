@@ -13,7 +13,7 @@ public class DeathScreen : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R)) 
-            SceneManager.LoadSceneAsync("Level " + SceneManagement.level);
+            SceneManager.LoadSceneAsync("Level " + SceneManage.level);
 
         if (Input.GetKeyDown(KeyCode.Escape))
             SceneManager.LoadSceneAsync("Level Select");
@@ -22,8 +22,5 @@ public class DeathScreen : MonoBehaviour
 
     }
 
-    void Respawn()
-    {
-    }
-
+    
 }
