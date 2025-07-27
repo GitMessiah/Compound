@@ -112,7 +112,7 @@ MonoBehaviour:
   attackDistanceFromEcooli: 1
   runX: 5
   runY: 3
-  reloadTime: 5
+  reloadTime: 1
   reloadTimer: 0
   sunglassesOn: 1
   sunglassesFallingOff: 0
