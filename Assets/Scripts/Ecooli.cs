@@ -55,6 +55,7 @@ public class Ecooli : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
         if (!health.dead && !sunglassesFallingOff)
         {
 
@@ -104,7 +105,7 @@ public class Ecooli : MonoBehaviour
             {
                 if (timer > 5f)
                 {
-                    if(Random.Range(0,100) > 66f) SoundManager.PlaySound(SoundType.ECOOLIIDLE, 0.3f);
+                    if (Random.Range(0, 100) > 80f) SoundManager.PlaySound(SoundType.ECOOLIIDLE, 0.3f);
                     timer = 0;
                 }
                 reloadTimer -= Time.deltaTime;
