@@ -485,7 +485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0adeb47341316b44395d2e94add5b35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Level 5
+  scene: Credits
+  loadSceneOnEscape: 0
 --- !u!114 &532477845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,7 +677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0adeb47341316b44395d2e94add5b35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Level 1
+  scene: Level Select
+  loadSceneOnEscape: 0
 --- !u!114 &1181334022
 MonoBehaviour:
   m_ObjectHideFlags: 0

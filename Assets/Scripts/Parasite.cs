@@ -5,6 +5,7 @@ public class Parasite : MonoBehaviour
     Transform player;
     Health health;
     Rigidbody2D rb;
+    Animator animator;
 
     public float distanceToActivate;
     public float speed;
@@ -17,6 +18,7 @@ public class Parasite : MonoBehaviour
         player = FindFirstObjectByType<PlayerMovement>().transform;
         health = GetComponent<Health>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -46,7 +48,7 @@ public class Parasite : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject);
+            animator.Play("Parasite_Death");
         }
     }
 
@@ -56,6 +58,11 @@ public class Parasite : MonoBehaviour
         {
             collision.gameObject.GetComponent<Health>().doDamage(1);
         }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
 

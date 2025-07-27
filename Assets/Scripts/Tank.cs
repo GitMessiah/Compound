@@ -9,6 +9,7 @@ public class Tank : MonoBehaviour
     Health health;
     Rigidbody2D rb;
     SpriteRenderer sprite;
+    Animator animator;
 
     public GameObject bomb;
     public Transform firepoint;
@@ -33,6 +34,8 @@ public class Tank : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         reloadTimer = reloadTime;
         sprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+
 
     }
 
@@ -108,10 +111,16 @@ public class Tank : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject);
+            animator.Play("Tank_Death");
         }
 
 
 
     }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
 }

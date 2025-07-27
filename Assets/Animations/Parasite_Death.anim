@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dip_Dead
+  m_Name: Parasite_Death
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,27 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -7760279075196163885, guid: 11b4519de587242459056473d0b67db9, type: 3}
+      value: {fileID: 2967013568922778865, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - time: 0.125
+      value: {fileID: 6640659416244682370, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - time: 0.25
+      value: {fileID: 6959696840088832522, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - time: 0.375
+      value: {fileID: -4498785658544836901, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - time: 0.5
+      value: {fileID: 5849518589288388797, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - time: 0.625
+      value: {fileID: -964939106796351147, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - time: 0.75
+      value: {fileID: 5010073442998567471, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - time: 0.875
+      value: {fileID: 7709875898786378941, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 1
+  m_SampleRate: 8
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -44,13 +58,20 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -7760279075196163885, guid: 11b4519de587242459056473d0b67db9, type: 3}
+    - {fileID: 2967013568922778865, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - {fileID: 6640659416244682370, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - {fileID: 6959696840088832522, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - {fileID: -4498785658544836901, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - {fileID: 5849518589288388797, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - {fileID: -964939106796351147, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - {fileID: 5010073442998567471, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
+    - {fileID: 7709875898786378941, guid: db524b7ff92b17245b9ef5bc343a48f5, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -70,8 +91,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 2
-    functionName: AfterDeath
+  - time: 1
+    functionName: Die
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
