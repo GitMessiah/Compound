@@ -13,7 +13,7 @@ public class Tank : MonoBehaviour
     public GameObject bomb;
     public Transform firepoint;
 
-    public float distanceToActivate = 25f;
+    public float distanceToActivate = 7.5f;
     public float distanceRun = 5f;
     public float speed = 1f;
     public float bulletSpeed = 5f;
@@ -63,7 +63,7 @@ public class Tank : MonoBehaviour
                 if (reloadTimer < 0)
                 {
                     reloadTimer = reloadTime;
-                    SoundManager.PlaySound(SoundType.TANKSHOOT);
+                    SoundManager.PlaySound(SoundType.TANKSHOOT, 0.5f);
                     if (distance > 0)
                     {
                         firepoint.position = new Vector2(transform.position.x + distanceFromTank, transform.position.y + distanceFromTankY);

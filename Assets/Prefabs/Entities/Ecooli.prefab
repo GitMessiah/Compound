@@ -81,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 7
   m_Sprite: {fileID: 1466080310614367976, guid: 9f973d884770de24b8f66b9db3c7c5f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -117,8 +117,8 @@ MonoBehaviour:
   sunglassesOn: 1
   sunglassesFallingOff: 0
   onlyFallOnce: 0
-  distanceToActivate: 15
-  fadeSpeed: 0.002
+  distanceToActivate: 10
+  fadeSpeed: 3
 --- !u!95 &5739936416489333283
 Animator:
   serializedVersion: 7
@@ -199,7 +199,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 3
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 2
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0240d480489c84d4ea9aeac6131a4892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 30
   dead: 0
   invincible: 0
   invincibleTime: 0.3

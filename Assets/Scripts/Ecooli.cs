@@ -27,7 +27,7 @@ public class Ecooli : MonoBehaviour
     public bool sunglassesFallingOff = false;
     public bool onlyFallOnce = false;
 
-    public float distanceToActivate = 25;
+    public float distanceToActivate = 7.5f;
     public float fadeSpeed = 3;
 
     float timer;
@@ -55,18 +55,9 @@ public class Ecooli : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (health.dead)
-        {
-            Color color = mat.color;
-            color.a = Mathf.Max(0, color.a - fadeSpeed); // Clamp to 0
-            mat.color = color;
-
-        }
-
         if (!health.dead && !sunglassesFallingOff)
         {
-            
+
 
             float distanceX = player.position.x - transform.position.x;
             float distanceY = player.position.y - transform.position.y;
@@ -111,15 +102,21 @@ public class Ecooli : MonoBehaviour
 
             if ((player.transform.position - transform.position).magnitude < distanceToActivate)
             {
+                if (timer > 5f)
+                {
+                    if(Random.Range(0,100) > 80f) SoundManager.PlaySound(SoundType.ECOOLIIDLE, 0.3f);
+                    timer = 0;
+                }
                 reloadTimer -= Time.deltaTime;
             }
 
             if (health.health <= 20 && !onlyFallOnce)
-                {
-                    sunglassesOn = false;
-                    sunglassesFallingOff = true;
-                    onlyFallOnce = true;
-                }
+            {
+                SoundManager.PlaySound(SoundType.ECOOLIGLASSES, 0.4f);
+                sunglassesOn = false;
+                sunglassesFallingOff = true;
+                onlyFallOnce = true;
+            }
 
         } 
 
@@ -187,7 +184,7 @@ public class Ecooli : MonoBehaviour
             }
         } else
         {
-            if(!played) SoundManager.PlaySound(SoundType.ECOOLIDEATH, 0.2f); played = true;
+            if(!played) SoundManager.PlaySound(SoundType.ECOOLIDEATH, 0.5f); played = true;
             animator.Play("Ecooli_Death");
         }
         
