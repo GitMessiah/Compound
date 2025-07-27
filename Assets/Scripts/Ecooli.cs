@@ -27,9 +27,13 @@ public class Ecooli : MonoBehaviour
     public bool sunglassesFallingOff = false;
     public bool onlyFallOnce = false;
 
-    public float distanceToActivate = 25;
+    public float distanceToActivate = 7.5f;
+    public float fadeSpeed = 3;
+
     float timer;
     bool played = false;
+
+    private Material mat;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -43,6 +47,8 @@ public class Ecooli : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         firepointAnimator = firepoint.GetComponent<Animator>();
         gunSprite = firepoint.GetComponent<SpriteRenderer>();
+        mat = GetComponent<Renderer>().material;
+
 
     }
 
@@ -51,7 +57,7 @@ public class Ecooli : MonoBehaviour
     {
         if (!health.dead && !sunglassesFallingOff)
         {
-            
+
 
             float distanceX = player.position.x - transform.position.x;
             float distanceY = player.position.y - transform.position.y;
@@ -96,15 +102,21 @@ public class Ecooli : MonoBehaviour
 
             if ((player.transform.position - transform.position).magnitude < distanceToActivate)
             {
+                if (timer > 5f)
+                {
+                    if(Random.Range(0,100) > 80f) SoundManager.PlaySound(SoundType.ECOOLIIDLE, 0.3f);
+                    timer = 0;
+                }
                 reloadTimer -= Time.deltaTime;
             }
 
             if (health.health <= 20 && !onlyFallOnce)
-                {
-                    sunglassesOn = false;
-                    sunglassesFallingOff = true;
-                    onlyFallOnce = true;
-                }
+            {
+                SoundManager.PlaySound(SoundType.ECOOLIGLASSES, 0.4f);
+                sunglassesOn = false;
+                sunglassesFallingOff = true;
+                onlyFallOnce = true;
+            }
 
         } 
 
@@ -172,7 +184,7 @@ public class Ecooli : MonoBehaviour
             }
         } else
         {
-            if(!played) SoundManager.PlaySound(SoundType.ECOOLIDEATH, 0.2f); played = true;
+            if(!played) SoundManager.PlaySound(SoundType.ECOOLIDEATH, 0.5f); played = true;
             animator.Play("Ecooli_Death");
         }
         
@@ -206,6 +218,8 @@ public class Ecooli : MonoBehaviour
 
         }
     }
+
+    
 
     
 

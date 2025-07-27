@@ -206,7 +206,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -3723705032955758405, guid: 3c29b072d1915734b868270ee1ba9a4c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -253,6 +253,11 @@ MonoBehaviour:
   firepoint: {fileID: 2413678376326520685}
   bullet: {fileID: 4902051237376009549, guid: cb54c78164ca06344ba73dcf030521f0, type: 3}
   animator: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  groundCheckRadius: 0.1
+  groundCheckPoint: {fileID: 0}
 --- !u!50 &8341646798635755224
 Rigidbody2D:
   serializedVersion: 5

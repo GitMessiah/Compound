@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
 
+    public float x;
     public float shotForce = 10f;
     public float speed = 5f;
     public float jumpForce = 10f;
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool grounded = false;
     public bool bowCharged = false;
+    public bool bowCharging = false;
 
     float movementX;
     Vector2 mousePos;
@@ -53,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rb.linearVelocityY <= 0.1 && rb.linearVelocityY >= 0) grounded = true; else grounded = false;
+        GroundedCheck();
         reloadSpeedTimer -= Time.deltaTime;
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -68,6 +70,11 @@ public class PlayerMovement : MonoBehaviour
 
                 if (charge < maxCharge)
                 {
+                    if (!bowCharging)
+                    {
+                        SoundManager.PlaySound(SoundType.BOWCHARGE, 0.25f);
+                        bowCharging = true;
+                    }
                     charge += Time.deltaTime;
 
                 }
@@ -75,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if (!bowCharged)
                     {
-                        SoundManager.PlaySound(SoundType.BOWCHARGE, 0.7f);
+                        SoundManager.PlaySound(SoundType.BOWFULL, 0.5f);
                         bowCharged = true;
                     }
                     charge = maxCharge;
@@ -90,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
                 Shoot();
                 bowCharged = false;
+                bowCharging = false;
                 charge = 0;
                 chargeBar.value = 0;
                 reloadSpeedTimer = reloadSpeed;
@@ -101,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 grounded = false;
-                SoundManager.PlaySound(SoundType.JUMP);
+                SoundManager.PlaySound(SoundType.JUMP, 0.1f);
             }
 
         }
@@ -192,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
     void Shoot()
     {
         GameObject g = Instantiate(bullet, firepoint.position, firepoint.rotation);
-        SoundManager.PlaySound(SoundType.BOWSHOT);
+        SoundManager.PlaySound(SoundType.BOWSHOT, 0.5f);
         g.GetComponent<Rigidbody2D>().AddForce(firepoint.right * shotForce * charge);
         g.GetComponent<Arrow>().damage = charge * damage;
         g.GetComponent<Arrow>().knockback *= charge * 0.66f;
@@ -203,40 +211,13 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-    }
+    } 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void GroundedCheck()
     {
-        // if (collision.gameObject.CompareTag("Ground") && !dipHealth.dead)
-        // {
-        //     grounded = true;
-        //     if (rb.linearVelocityX > 0)
-        //     {
-        //         rb.linearVelocityX = speed;
-        //     }
-        //     if (rb.linearVelocityX < 0)
-        //     {
-        //         rb.linearVelocityX = -speed;
-        //     }
-
-        // }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground") && !dipHealth.dead)
-        {
-            grounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        // if (collision.gameObject.CompareTag("Ground") && !dipHealth.dead)
-        // {
-        //     grounded = false;
-        // }
-    }
+        Vector2 pos = transform.position + Vector3.down * (GetComponent<Collider2D>().bounds.extents.y + 0.05f);
+        grounded = Physics2D.OverlapCircle(pos, x, LayerMask.GetMask("wall"));
+    } 
 
     public void AfterDeath()
     {

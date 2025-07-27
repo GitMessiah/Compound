@@ -17,7 +17,10 @@ public enum SoundType
     TANKPASSIVE,
     TANKDEATH,
     PARASITEPASSIVE,
-    PARASITEDEATH
+    PARASITEDEATH,
+    BOWFULL,
+    ECOOLIIDLE,
+    ECOOLIGLASSES
 }
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
