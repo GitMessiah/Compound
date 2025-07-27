@@ -23,6 +23,7 @@ public class Tank : MonoBehaviour
 
     public float reloadTime = 1;
     float reloadTimer;
+    float timer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -42,6 +43,7 @@ public class Tank : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!health.dead)
         {
             float distance = player.position.x - transform.position.x;
@@ -50,25 +52,35 @@ public class Tank : MonoBehaviour
 
             reloadTimer -= Time.deltaTime;
 
-            if (reloadTimer < 0 && path.magnitude < distanceToActivate)
+            if (path.magnitude < distanceToActivate)
             {
-                reloadTimer = reloadTime;
-
-                if (distance > 0)
+                timer += Time.deltaTime;
+                if (timer > 5f && Random.Range(0, 100) > 80)
                 {
-                    firepoint.position = new Vector2(transform.position.x + distanceFromTank, transform.position.y + distanceFromTankY);
-                    GameObject g = Instantiate(bomb, firepoint.position, firepoint.rotation);
-                    g.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletSpeed, 0));
-                } else
+                    SoundManager.PlaySound(SoundType.TANKPASSIVE);
+                    timer = 0f;
+                }
+                if (reloadTimer < 0)
                 {
-                    firepoint.position = new Vector2(transform.position.x - distanceFromTank, transform.position.y + distanceFromTankY);
-                    GameObject g = Instantiate(bomb, firepoint.position, firepoint.rotation);
-                    g.GetComponent<Rigidbody2D>().AddForce(new Vector2(-bulletSpeed, 0));
+                    reloadTimer = reloadTime;
+                    SoundManager.PlaySound(SoundType.TANKSHOOT);
+                    if (distance > 0)
+                    {
+                        firepoint.position = new Vector2(transform.position.x + distanceFromTank, transform.position.y + distanceFromTankY);
+                        GameObject g = Instantiate(bomb, firepoint.position, firepoint.rotation);
+                        g.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletSpeed, 0));
+                    }
+                    else
+                    {
+                        firepoint.position = new Vector2(transform.position.x - distanceFromTank, transform.position.y + distanceFromTankY);
+                        GameObject g = Instantiate(bomb, firepoint.position, firepoint.rotation);
+                        g.GetComponent<Rigidbody2D>().AddForce(new Vector2(-bulletSpeed, 0));
+                    }
                 }
             }
 
 
-            if (path.magnitude < distanceRun) 
+            if (path.magnitude < distanceRun)
             {
                 if (distance > 0)
                 {
@@ -80,19 +92,23 @@ public class Tank : MonoBehaviour
 
                     sprite.flipX = true;
                     rb.AddForce(new Vector2(speed, 0));
-             
+
                 }
 
 
-            } else if (path.magnitude < distanceRun * 2)
+            }
+            else if (path.magnitude < distanceRun * 2)
             {
                 if (distance > 0)
                 {
                     sprite.flipX = false;
-                } else if (distance < 0) {
+                }
+                else if (distance < 0)
+                {
                     sprite.flipX = true;
                 }
-            } else if (path.magnitude < distanceToActivate)
+            }
+            else if (path.magnitude < distanceToActivate)
             {
 
                 if (distance > 0)
@@ -111,11 +127,9 @@ public class Tank : MonoBehaviour
         }
         else
         {
+            SoundManager.PlaySound(SoundType.TANKDEATH);
             animator.Play("Tank_Death");
         }
-
-
-
     }
 
     public void Die()

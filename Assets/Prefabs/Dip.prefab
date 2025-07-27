@@ -248,6 +248,7 @@ MonoBehaviour:
   bowSprite: {fileID: 3857733740039694672}
   die: 0
   grounded: 0
+  bowCharged: 0
   firepoint: {fileID: 2413678376326520685}
   bullet: {fileID: 4902051237376009549, guid: cb54c78164ca06344ba73dcf030521f0, type: 3}
   animator: {fileID: 0}

@@ -9,7 +9,8 @@ public class Bacteria : MonoBehaviour
     public Rigidbody2D rb;
     public float speed = 1;
     public float distanceToActivate = 25;
-    
+
+    float timer = 0f;
 
     public Animator animator;
 
@@ -33,10 +34,18 @@ public class Bacteria : MonoBehaviour
             {
                 path.Normalize();
                 rb.AddForce(path * speed);
+                timer += Time.deltaTime;
+                if (timer > 5f && Random.Range(0, 100) > 80)
+                {
+                    SoundManager.PlaySound(SoundType.BACTERIAPASSIVE);
+                    timer = 0f;
+                }
             }
-            
-        } else
+
+        }
+        else
         {
+            SoundManager.PlaySound(SoundType.BACTERIADEATH);
             animator.Play("Bacteria_Death");
         }
     }

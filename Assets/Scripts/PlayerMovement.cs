@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float reloadSpeedTimer;
 
     public float charge = 0;
-    public float maxCharge = 3;
+    public float maxCharge = 1;
 
     public Slider chargeBar;
     public float barX;
@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     public bool die = false;
 
     public bool grounded = false;
+    public bool bowCharged = false;
 
     float movementX;
     Vector2 mousePos;
@@ -78,6 +79,11 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
+                    if (!bowCharged)
+                    {
+                        SoundManager.PlaySound(SoundType.BOWCHARGE);
+                        bowCharged = true;
+                    }
                     charge = maxCharge;
                 }
 
@@ -89,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
             {
 
                 Shoot();
+                bowCharged = false;
                 charge = 0;
                 chargeBar.value = 0;
                 reloadSpeedTimer = reloadSpeed;
@@ -100,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 grounded = false;
+                SoundManager.PlaySound(SoundType.JUMP);
             }
 
         }
@@ -157,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
         if (dipHealth.dead && !die)
         {
             animator.Play("Dip_Death", -1, 0f);
+            SoundManager.PlaySound(SoundType.PLAYERDEATH);
             die = true;
         }
         else if (!dipHealth.dead)
@@ -189,6 +198,7 @@ public class PlayerMovement : MonoBehaviour
     void Shoot()
     {
         GameObject g = Instantiate(bullet, firepoint.position, firepoint.rotation);
+        SoundManager.PlaySound(SoundType.BOWSHOT);
         g.GetComponent<Rigidbody2D>().AddForce(firepoint.right * shotForce * charge);
         g.GetComponent<Arrow>().damage = charge * damage;
         g.GetComponent<Arrow>().knockback *= charge * 0.66f;

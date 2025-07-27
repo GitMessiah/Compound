@@ -27,6 +27,9 @@ public class Ecooli : MonoBehaviour
     public bool sunglassesFallingOff = false;
     public bool onlyFallOnce = false;
 
+    public float distanceToActivate = 25;
+    float timer;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,8 +48,6 @@ public class Ecooli : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-
         if (!health.dead && !sunglassesFallingOff)
         {
             
@@ -92,14 +93,17 @@ public class Ecooli : MonoBehaviour
 
             }
 
-            reloadTimer -= Time.deltaTime;
+            if ((player.transform.position - transform.position).magnitude < distanceToActivate)
+            {
+                reloadTimer -= Time.deltaTime;
+            }
 
             if (health.health <= 20 && !onlyFallOnce)
-            {
-                sunglassesOn = false;
-                sunglassesFallingOff = true;
-                onlyFallOnce = true;
-            }
+                {
+                    sunglassesOn = false;
+                    sunglassesFallingOff = true;
+                    onlyFallOnce = true;
+                }
 
         } 
 
@@ -167,6 +171,7 @@ public class Ecooli : MonoBehaviour
             }
         } else
         {
+            SoundManager.PlaySound(SoundType.ECOOLIDEATH);
             animator.Play("Ecooli_Death");
         }
         
