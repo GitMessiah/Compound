@@ -112,12 +112,12 @@ TextureImporter:
       name: level_4_0
       rect:
         serializedVersion: 2
-        x: 309
-        y: 514
-        width: 175
-        height: 43
+        x: 297
+        y: 460
+        width: 200
+        height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: level_4_1
       rect:
         serializedVersion: 2
-        x: 884
-        y: 515
-        width: 175
-        height: 43
+        x: 871
+        y: 460
+        width: 200
+        height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,12 +156,12 @@ TextureImporter:
       name: level_4_2
       rect:
         serializedVersion: 2
-        x: 307
-        y: 190
-        width: 175
-        height: 43
+        x: 293
+        y: 136
+        width: 200
+        height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +178,12 @@ TextureImporter:
       name: level_4_3
       rect:
         serializedVersion: 2
-        x: 884
-        y: 189
-        width: 175
-        height: 43
+        x: 871
+        y: 136
+        width: 200
+        height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

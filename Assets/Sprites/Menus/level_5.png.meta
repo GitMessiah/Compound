@@ -112,12 +112,12 @@ TextureImporter:
       name: level_5_0
       rect:
         serializedVersion: 2
-        x: 308
-        y: 441
-        width: 175
-        height: 43
+        x: 296
+        y: 387
+        width: 200
+        height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: level_5_1
       rect:
         serializedVersion: 2
-        x: 885
-        y: 439
-        width: 175
-        height: 43
+        x: 873
+        y: 386
+        width: 200
+        height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,12 +156,12 @@ TextureImporter:
       name: level_5_2
       rect:
         serializedVersion: 2
-        x: 308
-        y: 114
-        width: 175
-        height: 43
+        x: 296
+        y: 60
+        width: 200
+        height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +178,12 @@ TextureImporter:
       name: level_5_3
       rect:
         serializedVersion: 2
-        x: 883
-        y: 115
-        width: 175
-        height: 43
+        x: 871
+        y: 60
+        width: 200
+        height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
